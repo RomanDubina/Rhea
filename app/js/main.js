@@ -1,7 +1,10 @@
 $(function () {
-    $('.foodslider__inne').slick({
+    $('.places__slider').slick({
         slidesToShow: 3,
         slidesToScroll:1,
-        infinite: true
+        infinite: true,
+        centerMode: true,
+        variableWidth: true,
+        centerPadding: 0
     })
 })

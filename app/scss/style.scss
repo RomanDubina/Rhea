@@ -3,8 +3,111 @@
 @import "global";
 @import "animation";
 
+.header{
+  padding: 71px 0;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__menu{
+    &-list{
+    display: inline-block;
+  }
+  a{
+    padding: 16px 43px;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 0.3px;
+    color: $header-link;
+    &.active{
+      color: $light-blue;
+    }
+  }
+  }
+  
+  &__btn{
+    display: inline-block;
+    &-singin{
+      border: 3px solid #3984f3;
+    }
+  }
+}
 
-
+.first-screen{
+  padding: 150px 0 378px;
+  background-image: url(../images/bg/bg-firstscreen.png);
+  background-repeat: no-repeat;
+  background-position: center right;
+  position: relative;
+  &__content{
+    max-width: 600px;
+    width: 100%;
+    &-title{
+      font-size: 75px;
+      line-height: 80px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: $title;
+      margin-bottom: 60px;
+    }
+    &-text{
+      line-height: 35px;
+      color: $text;
+      padding-right: 85px;
+      margin-bottom: 95px;
+    }
+    &-link{
+      a{
+        font-size: 20px;
+        line-height: 35px;
+        letter-spacing: 0.2px;
+        color: #fff;
+        padding: 11px 45px;
+        background-color: $main-blue;
+      }
+    }
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    background-image: url(../images/bg/godong.png);
+    width: 247px;
+    height: 464px;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    bottom: 0;
+    left: 0;
+  }
+}
+.places{
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__content{
+    max-width: 574px;
+    width: 100%;
+    margin-left: 140px;
+  }
+  &__slider{
+    // margin-left: -120px;
+    max-width: 1043px;
+    width: 100%;
+    &-item{
+      // margin: 0 19px;
+    }
+    .slick-slide{
+      margin: 0 19px;
+    }
+    .slick-list{
+      &.draggable{
+        margin-left: -120px;
+      }
+    } 
+  }
+}
 
 
 
