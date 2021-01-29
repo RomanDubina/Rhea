@@ -40,6 +40,7 @@ function scripts() {
     return src([
         'node_modules/jquery/dist/jquery.js',
         'node_modules/slick-carousel/slick/slick.js',
+        'plugins/rateyo/src/jquery.rateyo.js',
         'app/js/main.js'
     ])
     .pipe(concat('main.min.js'))
@@ -54,6 +55,7 @@ function styles() {
         'node_modules/normalize-css/normalize.css',
         'node_modules/slick-carousel/slick/slick-theme.css',
         'node_modules/slick-carousel/slick/slick.css',
+        'plugins/rateyo/src/jquery.rateyo.css',
         'app/scss/style.scss'
     ])
         .pipe(scss({outputStyle: 'compressed'}))// expanded

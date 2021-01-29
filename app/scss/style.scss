@@ -3,47 +3,48 @@
 @import "global";
 @import "animation";
 
-.header{
+.header {
   padding: 71px 0;
-  &__inner{
+  &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  &__menu{
-    &-list{
-    display: inline-block;
-  }
-  a{
-    padding: 16px 43px;
-    font-size: 20px;
-    line-height: 22px;
-    letter-spacing: 0.3px;
-    color: $header-link;
-    &.active{
-      color: $light-blue;
+  &__menu {
+    &-list {
+      display: inline-block;
+    }
+    a {
+      padding: 16px 43px;
+      font-size: 20px;
+      line-height: 22px;
+      letter-spacing: 0.3px;
+      color: $header-link;
+      &.active {
+        color: $light-blue;
+      }
     }
   }
-  }
-  
-  &__btn{
+
+  &__btn {
     display: inline-block;
-    &-singin{
+    &-singin {
       border: 3px solid #3984f3;
     }
   }
 }
 
-.first-screen{
+.first-screen {
   padding: 150px 0 378px;
+  margin-bottom: 135px;
   background-image: url(../images/bg/bg-firstscreen.png);
   background-repeat: no-repeat;
   background-position: center right;
   position: relative;
-  &__content{
+  &__content {
     max-width: 600px;
     width: 100%;
-    &-title{
+    &-title {
       font-size: 75px;
       line-height: 80px;
       font-weight: 800;
@@ -51,69 +52,173 @@
       color: $title;
       margin-bottom: 60px;
     }
-    &-text{
+    &-text {
       line-height: 35px;
       color: $text;
       padding-right: 85px;
       margin-bottom: 95px;
     }
-    &-link{
-      a{
-        font-size: 20px;
-        line-height: 35px;
-        letter-spacing: 0.2px;
-        color: #fff;
-        padding: 11px 45px;
-        background-color: $main-blue;
-      }
-    }
   }
-  &::before{
-    content: '';
-    position: absolute;
-    background-image: url(../images/bg/godong.png);
-    width: 247px;
-    height: 464px;
-    background-position: left bottom;
-    background-repeat: no-repeat;
-    background-size: 80%;
-    bottom: 0;
-    left: 0;
-  }
+  // &::before{
+  //   content: '';
+  //   position: absolute;
+  //   background-image: url(../images/bg/godong.png);
+  //   width: 247px;
+  //   height: 464px;
+  //   background-position: left bottom;
+  //   background-repeat: no-repeat;
+  //   background-size: 80%;
+  //   bottom: 0;
+  //   left: 0;
+  // }
 }
-.places{
-  &__inner{
+.places {
+  margin-bottom: 100px;
+  &__inner {
     display: flex;
     justify-content: space-between;
   }
-  &__content{
+  &__content {
     max-width: 574px;
     width: 100%;
     margin-left: 140px;
   }
-  &__slider{
-    // margin-left: -120px;
+  &__slider {
     max-width: 1043px;
     width: 100%;
-    &-item{
-      // margin: 0 19px;
-    }
-    .slick-slide{
+    padding-bottom: 90px;
+    .slick-slide {
       margin: 0 19px;
     }
-    .slick-list{
-      &.draggable{
-        margin-left: -120px;
+    .slick-list {
+      &.draggable {
+        margin-left: -145px;
+        .slick-track {
+          display: flex;
+          align-items: flex-end;
+        }
       }
-    } 
+    }
+    .slick-arrow {
+      position: absolute;
+      // bottom: 0;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 30px;
+        background-position: center center;
+       transform: translateY(-100%);
+        background-repeat: no-repeat;
+      }
+      &.slick-prev {
+        top: 100%;
+        left: 17.5%;
+        &::before {
+          background-image: url(../images/icons/arrow-left.svg);
+        }
+      }
+      &.slick-next {
+        top: 100%;
+        left: 27%;
+        &::before {
+          background-image: url(../images/icons/arrow-right.svg);
+        }
+      }
+    }
+  }
+  &__slide {
+    position: relative;
+    &-img {
+      position: relative;
+
+      &--blur {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: linear-gradient(
+          to top,
+          rgba(#30444a, 0.999),
+          rgba(#d7f4f2, 0)
+        );
+      }
+    }
+
+    &-location {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      font-size: 23px;
+      font-weight: 400;
+      line-height: 42px;
+      letter-spacing: 0.23px;
+      color: #fff;
+      padding: 20px 25px;
+    }
+    &-info {
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      padding: 11px 0;
+    }
+    &-duration {
+      font-size: 24px;
+      line-height: 42px;
+      color: #a0a0a0;
+      font-weight: 600;
+      letter-spacing: 0.24px;
+    }
+    &-price {
+      position: absolute;
+      font-size: 24px;
+      line-height: 42px;
+      letter-spacing: 0.24px;
+      color: #fff;
+      background-color: $main-blue;
+      padding: 0 30px;
+      text-align: center;
+      left: 0;
+      top: 30px;
+    }
+  }
+  &__content {
+    &-title {
+      font-size: 35px;
+      line-height: 62px;
+      letter-spacing: 0.2px;
+      color: $title;
+      padding-bottom: 30px;
+      margin-bottom: 50px;
+      position: relative;
+      &::before {
+        content: "";
+        width: 78px;
+        height: 6px;
+        background-color: $main-blue;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+      }
+    }
+    &-text {
+      color: $text;
+      font-size: 18px;
+      line-height: 32px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .slick-current {
+    .places__slider-item {
+      padding-bottom: 9px;
+      .places__slide-info {
+        display: flex;
+      }
+    }
   }
 }
 
-
-
-
-
-
-
 @import "media";
-
