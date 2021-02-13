@@ -110,6 +110,138 @@
       </div>
     </section>
 
+    <section class="videos">
+      <div class="container">
+        <div class="videos__inner">
+          <div class="videos__descr">
+            <div class="videos__descr-title">Featured videos</div>
+            <div class="videos__descr-text">
+              Aliquam sodales vitae ex tincidunt consectetur. Etiam eleifend
+              malesuada magna, at imperdiet justo euismod eu. Aliquam vel
+              imperdet mi, et convallis eros. Duis fermentum fringilla nisl at
+              vulputate. Nunc nec lorem faucibus, molestie nisi id, elementum
+              sem. Sed vulputate tempor augue a efficitur urna, ultrices eu.
+              Duis vel turpis et arcu.
+            </div>
+          </div>
+
+          <div class="videos__box">
+            <div class="videos__box-container">
+              <div class="videos__box-player">
+                <video
+                  id="video"
+                  class="videos__box-video"
+                  src="videos/maldives.mp4"
+                  poster="videos/pstr-maldives.jpg"
+                ></video>
+                <div class="videos__cover">
+                  <div class="btn-play"></div>
+                  <div class="videos__info">
+                    <div class="videos__info-title"></div>
+                    <div class="videos__info-duration"></div>
+                  </div>
+                </div>
+
+                <div class="videos__box-controls controls">
+                  <div class="controls__progress-bar">
+                    <div class="controls__progress-bar--juice"></div>
+                    <div class="controls__progress-bar--preload"></div>
+                  </div>
+                  <div class="controls__btns">
+                    <button id="play-pause"></button>
+                    <button id="stop"></button>
+
+                    <div class="volume-wrapper">
+                    <button id="volume-state"></button>
+                    <input type="range" min="0" max="100" value="30" onload="setStartVolume()" class="volume">
+                    </div>
+
+                    <div class="videos__times"></div>
+
+                    <button id="full-screen"></button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="videos__menu">
+              <ul class="videos__menu-list">
+                <li
+                  data-urlVideo="videos/maldives.mp4"
+                  data-urlPoster="videos/pstr-maldives.jpg"
+                  class="videos__menu-item v-thumbs active"
+                  id="maldives"
+                >
+                  <img src="videos/img-slide-maldives.jpg" alt="" />
+                  <div class="v-thumbs__descr">
+                    <div class="v-thumbs__descr-title">When go to Maldives</div>
+                    <div class="v-thumbs__descr-duration">04.03</div>
+                  </div>
+                </li>
+
+                <li
+                  data-urlVideo="videos/tanzania.mp4"
+                  data-urlPoster="videos/pstr-tanzania.jpg"
+                  class="videos__menu-item v-thumbs"
+                  id="tanzania"
+                >
+                  <img src="videos/img-slide-tanzania.jpg" alt="" />
+                  <div class="v-thumbs__descr">
+                    <div class="v-thumbs__descr-title">
+                      Tanzania’s deadly pink lake
+                    </div>
+                    <div class="v-thumbs__descr-duration">04.17</div>
+                  </div>
+                </li>
+
+                <li
+                  data-urlVideo="videos/kathmandu.mp4"
+                  data-urlPoster="videos/pstr-kathmandu.jpg"
+                  class="videos__menu-item v-thumbs"
+                >
+                  <img src="videos/img-slide-kathmandu.jpg" alt="" />
+                  <div class="v-thumbs__descr">
+                    <div class="v-thumbs__descr-title">
+                      Top things to do in Kathmandu
+                    </div>
+                    <div class="v-thumbs__descr-duration">04.13</div>
+                  </div>
+                </li>
+
+                <li
+                  data-urlVideo="videos/china.mp4"
+                  data-urlPoster="videos/pstr-china.jpg"
+                  class="videos__menu-item v-thumbs"
+                >
+                  <img src="videos/img-slide-china.jpg" alt="" />
+                  <div class="v-thumbs__descr">
+                    <div class="v-thumbs__descr-title">
+                      Exploring China’s creative capital
+                    </div>
+                    <div class="v-thumbs__descr-duration">04.30</div>
+                  </div>
+                </li>
+
+                <li
+                  data-urlVideo="videos/wynwood.mp4"
+                  data-urlPoster="videos/pstr-wynwood.jpg"
+                  class="videos__menu-item v-thumbs"
+                  id="wynwood"
+                >
+                  <img src="videos/img-slide-wynwood.jpg" alt="" />
+                  <div class="v-thumbs__descr">
+                    <div class="v-thumbs__descr-title">Wynwood walls</div>
+                    <div class="v-thumbs__descr-duration">02.29</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script src="js/main.min.js"></script>
   </body>
 </html>
