@@ -372,8 +372,14 @@
         &__btns {
           padding: 10px;
           display: flex;
-          justify-content: start;
+          justify-content: space-between;
           align-items: center;
+          width: 100%;
+          &-left,
+          &-right{
+            display: flex;
+            align-items: center;
+          }
           .volume-wrapper {
             width: 140px;
             display: flex;

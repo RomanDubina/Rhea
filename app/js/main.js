@@ -62,10 +62,17 @@ $(function () {
   let volume = $(".volume");
   let volumeState = $("#volume-state");
   let times = $('.videos__times');
+  let player = $('.videos__box-player');
   let btnFullScreen = $('#full-screen');
 
 
   btnFullScreen.on("click", function() {
+    if(document.fullscreenElement) {
+    document.exitFullscreen();
+    } else {
+      player[0].requestFullscreen();
+    }
+    
     
   });
   
