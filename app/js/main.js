@@ -10,6 +10,21 @@ $(function () {
     arrows: true,
   });
 
+  $('.categories__slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    centerMode: true,
+    variableWidth: true,
+    centerPadding: 0,
+  })
+
+  $('.experiences__slider').slick({
+    arrows: true,
+    dots: true,
+    infinite: false
+  })
+
   $("#rate-nepal").rateYo({
     starWidth: "21px",
     rating: 3,
@@ -61,21 +76,44 @@ $(function () {
   let progress = $(".controls__progress-bar");
   let volume = $(".volume");
   let volumeState = $("#volume-state");
-  let times = $('.videos__times');
-  let player = $('.videos__box-player');
-  let btnFullScreen = $('#full-screen');
+  let times = $(".videos__times");
+  let player = $(".videos__box-player");
+  let btnFullScreen = $("#full-screen");
+  let videoControlPanel = $(".controls");
+  let xxx;
 
+  player.mouseover(function () {
+    showHidePanel();
+  });
 
-  btnFullScreen.on("click", function() {
-    if(document.fullscreenElement) {
-    document.exitFullscreen();
+  function showHidePanel() {
+    player.mousemove(function () {
+      
+      
+      videoControlPanel.css({
+        transform: "translate(0)",
+      });
+      setTimeout(() => {
+       
+        videoControlPanel.css({
+          transform: "translateY(100%) translateY(-5px)",
+        });
+       
+      }, 6000);
+    });
+  }
+
+  btnFullScreen.on("click", function () {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
     } else {
       player[0].requestFullscreen();
+      video.css({
+        height: "100%",
+      });
     }
-    
-    
   });
-  
+
   function getDataCurrentVideo() {
     let videoList = [];
     videoList = $(".videos__menu-list").find("li");
@@ -84,7 +122,7 @@ $(function () {
       let durationVideo = $(this).find(".v-thumbs__descr-duration").text();
       $(".videos__info-title").text(titleVideo);
       $(".videos__info-duration").text(durationVideo);
-      times.text(`${video[0].currentTime} / ${durationVideo}`)
+      times.text(`${video[0].currentTime} / ${durationVideo}`);
       console.log(
         `№${indexInArray}. Название: ${titleVideo};  Продолжительность: ${durationVideo}`
       );
@@ -99,7 +137,7 @@ $(function () {
     setTimeout(() => {
       times.text(`
       ${secondsToHms(video[0].currentTime)} / ${secondsToHms(video[0].duration)}
-    `)
+    `);
     }, 500);
     btnBigPlay.css("display", "block");
     videoCover.css("display", "block");
@@ -123,9 +161,6 @@ $(function () {
       }, 50);
     }
   });
-
- 
-  
 
   function togglePlayPause() {
     if (video[0].paused) {
@@ -169,8 +204,6 @@ $(function () {
     }, 50);
   });
 
-  
-
   video[0].addEventListener("timeupdate", function () {
     let currentTime = Math.floor(video[0].currentTime);
     let duration = Math.floor(video[0].duration);
@@ -181,7 +214,7 @@ $(function () {
 
     times.text(`
       ${secondsToHms(currentTime)} / ${secondsToHms(duration)}
-    `)
+    `);
   });
 
   video[0].addEventListener("progress", function () {
@@ -221,48 +254,44 @@ $(function () {
     video[0].currentTime = video[0].duration * (o / w);
   });
 
-  function setStartVolume(){
-    video[0].volume = $(this).val()/100;
+  function setStartVolume() {
+    video[0].volume = $(this).val() / 100;
   }
 
   volumeState.on("click", function () {
-     if (video[0].volume > 0) {
+    if (video[0].volume > 0) {
       video[0].volume = 0;
-      $(this).attr('class','vol-off');
+      $(this).attr("class", "vol-off");
     } else {
-      video[0].volume = volume.val()/100;
+      video[0].volume = volume.val() / 100;
       $(this).removeClass("vol-off");
     }
   });
 
-  volume.on('input', function(){
+  volume.on("input", function () {
     let vol = $(this).val();
-    vol = vol/100;
+    vol = vol / 100;
     video[0].volume = vol;
     console.log(vol);
 
     if (vol < 0.1) {
-          volumeState.attr('class', 'vol-mute');
-          
-        } else if (vol > 0.1 && vol < 0.5) {
-          volumeState.attr('class', 'vol-down');
-         
-        } else if (vol > 0.5) {
-          volumeState.attr('class', 'vol-up');
-          
-        }
-  })
+      volumeState.attr("class", "vol-mute");
+    } else if (vol > 0.1 && vol < 0.5) {
+      volumeState.attr("class", "vol-down");
+    } else if (vol > 0.5) {
+      volumeState.attr("class", "vol-up");
+    }
+  });
 
   function secondsToHms(d) {
     d = Number(d);
     var h = Math.floor(d / 3600);
-    var m = Math.floor(d % 3600 / 60);
-    var s = Math.floor(d % 3600 % 60);
+    var m = Math.floor((d % 3600) / 60);
+    var s = Math.floor((d % 3600) % 60);
 
-    var hDisplay = h > 0 ? h + '.' : "";
-    var mDisplay = m > 0 ? m + '.'  : "0.";
-    var sDisplay = s > 0 ? (s < 10 ? "0" : "") + s  : "00";
-    return hDisplay + mDisplay + sDisplay; 
-}
-
+    var hDisplay = h > 0 ? h + "." : "";
+    var mDisplay = m > 0 ? m + "." : "0.";
+    var sDisplay = s > 0 ? (s < 10 ? "0" : "") + s : "00";
+    return hDisplay + mDisplay + sDisplay;
+  }
 });

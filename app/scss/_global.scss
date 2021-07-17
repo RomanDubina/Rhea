@@ -1,51 +1,115 @@
-html {
-    box-sizing: border-box;
-  }
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-  
-  a {
-    text-decoration: none;
-    display: inline-block;
-    
-  }
-  li {
-    display: inline-block;
-  }
-  ul,
-  li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  body {
-    font-family: 'NunitoSans', sans-serif;
-    font-weight: normal;
-    font-size: 22px;
-    line-height: 42px;
-    letter-spacing: 0.22px;
-    max-width: 1920px;
-    width: 100%;
-    margin: 0 auto;
-  }
 
-  .container{
-      max-width: 1600px;
-      width: 100%;
-      margin: 0 auto;
-  }
-  .link-btn{
-    width: 202px;
-    height: 57px;
-    font-size: 20px;
-    line-height: 35px;
-    letter-spacing: 0.2px;
-    color: #fff;
-    padding: 11px 0;
-    text-align: center;
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+li {
+  display: inline-block;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body {
+  // font-family: "NunitoSans", sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 42px;
+  letter-spacing: 0.22px;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}
+.link-btn {
+  width: 202px;
+  height: 57px;
+  font-size: 20px;
+  line-height: 35px;
+  letter-spacing: 0.2px;
+  color: #fff;
+  padding: 11px 0;
+  text-align: center;
+  background-color: $main-blue;
+  z-index: 100;
+}
+
+.section-title {
+  font-size: 50px;
+  line-height: 62px;
+  color: $title;
+  letter-spacing: 0.2px;
+  text-align: center;
+  padding-bottom: 30px;
+  margin-bottom: 60px;
+  position: relative;
+  &::before {
+    content: "";
+    width: 78px;
+    height: 6px;
     background-color: $main-blue;
-    z-index: 100;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
   }
+}
+
+.section-text {
+  line-height: 42px;
+  letter-spacing: 0.1px;
+  color: $text;
+  text-align: center;
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 5px;
+  margin-bottom: 100px;
+}
+
+.slick-arrow {
+  position: absolute;
+  // bottom: 0;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    background-position: center center;
+    transform: translateY(-100%);
+    background-repeat: no-repeat;
+  }
+  &.slick-prev {
+    top: 100%;
+    left: 45%;
+    &::before {
+      background-image: url(../images/icons/arrow-left.svg);
+    }
+  }
+  &.slick-next {
+    top: 100%;
+    right: 46%;
+    &::before {
+      background-image: url(../images/icons/arrow-right.svg);
+    }
+  }
+}
