@@ -41,6 +41,7 @@ function scripts() {
         'node_modules/jquery/dist/jquery.js',
         'node_modules/slick-carousel/slick/slick.js',
         'plugins/rateyo/src/jquery.rateyo.js',
+        'plugins/datepicker/dtp.js',
         'app/js/main.js'
     ])
     .pipe(concat('main.min.js'))
@@ -56,6 +57,7 @@ function styles() {
         'node_modules/slick-carousel/slick/slick-theme.css',
         'node_modules/slick-carousel/slick/slick.css',
         'plugins/rateyo/src/jquery.rateyo.css',
+        'plugins/datepicker/dtp.css',
         'app/scss/style.scss'
     ])
         .pipe(scss({outputStyle: 'compressed'}))// expanded

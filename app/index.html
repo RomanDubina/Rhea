@@ -59,11 +59,13 @@
         <div class="places__inner">
           <div class="places__slider">
             <div class="places__slider-item places__slide">
-              <div class="places__slide-img">
-                <div class="places__slide-price">$780</div>
-                <div class="places__slide-img--blur"></div>
-                <img src="images/content/maldives.jpg" alt="" />
-                <div class="places__slide-location">Kuramathi, maldives</div>
+              <div class="places__slide-img--wrap">
+                <div class="places__slide-img">
+                  <div class="places__slide-price">$780</div>
+                  <div class="places__slide-img--blur"></div>
+                  <img src="images/content/maldives.jpg" alt="" />
+                  <div class="places__slide-location">Kuramathi, maldives</div>
+                </div>
               </div>
 
               <div class="places__slide-info">
@@ -73,12 +75,15 @@
             </div>
 
             <div class="places__slider-item places__slide">
-              <div class="places__slide-img">
-                <div class="places__slide-price">$640</div>
-                <div class="places__slide-img--blur"></div>
-                <img src="images/content/nepal.jpg" alt="" />
-                <div class="places__slide-location">Kathmandu, Nepal</div>
+              <div class="places__slide-img--wrap">
+                <div class="places__slide-img">
+                  <div class="places__slide-price">$640</div>
+                  <div class="places__slide-img--blur"></div>
+                  <img src="images/content/nepal.jpg" alt="" />
+                  <div class="places__slide-location">Kathmandu, Nepal</div>
+                </div>
               </div>
+
               <div class="places__slide-info">
                 <div class="places__slide-rate" id="rate-nepal"></div>
                 <div class="places__slide-duration">7 days tour</div>
@@ -86,12 +91,17 @@
             </div>
 
             <div class="places__slider-item places__slide">
-              <div class="places__slide-img">
-                <div class="places__slide-price">$560</div>
-                <div class="places__slide-img--blur"></div>
-                <img src="images/content/indonesia.jpg" alt="" />
-                <div class="places__slide-location">Raja Ampat, Indonesia</div>
+              <div class="places__slide-img--wrap">
+                <div class="places__slide-img">
+                  <div class="places__slide-price">$560</div>
+                  <div class="places__slide-img--blur"></div>
+                  <img src="images/content/indonesia.jpg" alt="" />
+                  <div class="places__slide-location">
+                    Raja Ampat, Indonesia
+                  </div>
+                </div>
               </div>
+
               <div class="places__slide-info">
                 <div class="places__slide-rate" id="rate-indonesia"></div>
                 <div class="places__slide-duration">7 days tour</div>
@@ -160,14 +170,19 @@
 
                       <div class="volume-wrapper">
                         <button id="volume-state"></button>
-                        <input
+                        <div class="volume-box">
+                          <div class="volume-box__bar"></div>
+                          <input
                           type="range"
                           min="0"
                           max="100"
-                          value="30"
-                          onload="setStartVolume()"
+                          value="40"
+                          
                           class="volume"
                         />
+                        </div>
+                        
+
                       </div>
                     </div>
                     <div class="controls__btns-right">
@@ -328,13 +343,10 @@
                 eleifend quam.”
               </div>
               <div class="experiences__author">
-                <div class="experiences__author-photo" style="background-image: url(images/photos/photo-1.png);">
-                  <!-- <img
-                    class="experiences__slider-photo"
-                    src="images/photos/photo-1.png"
-                    alt="photo-author"
-                  /> -->
-                </div>
+                <div
+                  class="experiences__author-photo"
+                  style="background-image: url(images/photos/photo-1.png)"
+                ></div>
                 <div class="experiences__author-name">Donquixote Law</div>
                 <div class="experiences__author-specify">Treveller</div>
               </div>
@@ -346,30 +358,28 @@
                 diam, ac elementum urna.”
               </div>
               <div class="experiences__author">
-                <div class="experiences__author-photo" style="background-image: url(https://www.peoples.ru/art/cinema/actor/hande_ercel/tMjnPRqi5BjV1.jpeg);">
-                  <!-- <img
-                    class="experiences__slider-photo"
-                    src="images/photos/photo-1.png"
-                    alt="photo-author"
-                  /> -->
-                </div>
+                <div
+                  class="experiences__author-photo"
+                  style="
+                    background-image: url(https://www.peoples.ru/art/cinema/actor/hande_ercel/tMjnPRqi5BjV1.jpeg);
+                  "
+                ></div>
                 <div class="experiences__author-name">Hande Erçel</div>
                 <div class="experiences__author-specify">Actress</div>
               </div>
             </div>
             <div class="experiences__slider-item">
               <div class="experiences__text section-text">
-                “Curabitur posuere ullamcorper pulvinar. Ut elit elit, fringilla a nisi ut, dapibus
-                eleifend quam.”
+                “Curabitur posuere ullamcorper pulvinar. Ut elit elit, fringilla
+                a nisi ut, dapibus eleifend quam.”
               </div>
               <div class="experiences__author">
-                <div class="experiences__author-photo" style="background-image: url(https://images.theconversation.com/files/176655/original/file-20170703-7743-hyc2el.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip);">
-                  <!-- <img
-                    class="experiences__slider-photo"
-                    src="images/photos/photo-1.png"
-                    alt="photo-author"
-                  /> -->
-                </div>
+                <div
+                  class="experiences__author-photo"
+                  style="
+                    background-image: url(https://images.theconversation.com/files/176655/original/file-20170703-7743-hyc2el.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip);
+                  "
+                ></div>
                 <div class="experiences__author-name">Sherlock Holmes</div>
                 <div class="experiences__author-specify">Detective</div>
               </div>
@@ -379,13 +389,12 @@
                 “Curabitur posuere ullamcorper pulvinar. ”
               </div>
               <div class="experiences__author">
-                <div class="experiences__author-photo" style="background-image: url(https://pbs.twimg.com/profile_images/643469490920005633/PLfwXB05_400x400.jpg);">
-                  <!-- <img
-                    class="experiences__slider-photo"
-                    src="images/photos/photo-1.png"
-                    alt="photo-author"
-                  /> -->
-                </div>
+                <div
+                  class="experiences__author-photo"
+                  style="
+                    background-image: url(https://pbs.twimg.com/profile_images/643469490920005633/PLfwXB05_400x400.jpg);
+                  "
+                ></div>
                 <div class="experiences__author-name">Dr. Watson</div>
                 <div class="experiences__author-specify">Biographer</div>
               </div>
@@ -394,6 +403,95 @@
         </div>
       </div>
     </section>
+
+    <section
+      class="order-form"
+      style="background-image: url(images/bg/bg-booking.jpg)"
+    >
+      <div class="container">
+        <div class="order-form__baner">
+          <div class="order-form__slogan">We will see you</div>
+          <div class="order-form__promotion">Enjoy 30% Off On First Trip</div>
+        </div>
+
+        <form action="" class="order-form__form">
+          <div class="order-form__form-select">
+            <select name="" id="">
+              <option value="Destinations" disabled selected>
+                Destinations
+              </option>
+              <option value="Maldives">Maldives</option>
+              <option value="Kathmandu">Kathmandu</option>
+              <option value="Tanzania">Tanzania</option>
+              <option value="China">China</option>
+              <option value="Wynwood wEconomalls">Wynwood walls</option>
+            </select>
+          </div>
+
+          <div class="order-form__form-select">
+            <select name="" id="">
+              <option value="Package" disabled selected>Package</option>
+              <option value="Econom">Econom</option>
+              <option value="Medium">Medium</option>
+              <option value="All inclusive">All inclusive</option>
+            </select>
+          </div>
+          <div class="order-form__form-date--wrap">
+            <input class="order-form__form-date" type="text" value="Dates" />
+          </div>
+
+          <button class="order-form__form-btn" type="submit">Book Now</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <ul class="footer__links">
+          <li class="footer__item">
+            <a class="footer__link" href="#">Home</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Video</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Destinations</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Booking</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Contact</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Pricing</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Privacy Policy</a>
+          </li>
+        </ul>
+        <div class="footer__copyright">
+          <span>Copyright 2014 - 2018</span>
+          <a class="footer__copyright-link" href="#">
+            Rhea - Travel Around The World
+          </a>
+        </div>
+        <ul class="footer__social">
+          <li class="footer__social-item">
+            <a href="#" class="footer__social-link"></a>
+          </li>
+          <li class="footer__social-item">
+            <a href="#" class="footer__social-link"></a>
+          </li>
+          <li class="footer__social-item">
+            <a href="#" class="footer__social-link"></a>
+          </li>
+          <li class="footer__social-item">
+            <a href="#" class="footer__social-link"></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
 
     <script src="js/main.min.js"></script>
   </body>
