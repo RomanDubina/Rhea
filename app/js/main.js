@@ -39,7 +39,6 @@ $(function () {
   });
 
   const menuBtn = document.querySelector('.menu-btn')
-  const menu = document.querySelector('.header__menu')
   let menuOpen = false
   menuBtn.addEventListener('click', () => {
     if(!menuOpen) {
@@ -154,7 +153,7 @@ player.on('mousemove', function(){
       $(".videos__info-title").text(titleVideo);
       $(".videos__info-duration").text(durationVideo);
       times.text(`${video[0].currentTime} / ${durationVideo}`);
-      return indexInArray > 0;
+      return indexInArray > 0; // --- --------------------------------- остановить итерацию, получив данные первого елемента!
     });
   }
   getDataCurrentVideo();
