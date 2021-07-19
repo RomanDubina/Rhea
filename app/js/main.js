@@ -16,13 +16,42 @@ $(function () {
     centerMode: true,
     variableWidth: true,
     centerPadding: 0,
+
+    responsive: [
+      {
+        breakpoint: 625,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false
+        }
+      } 
+      
+    ]
   });
 
   $(".experiences__slider").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
     arrows: true,
     dots: true,
-    infinite: false,
+    infinite: false
+
   });
+
+  const menuBtn = document.querySelector('.menu-btn')
+  const menu = document.querySelector('.header__menu')
+  let menuOpen = false
+  menuBtn.addEventListener('click', () => {
+    if(!menuOpen) {
+      menuBtn.classList.add('open')
+      $('.header__menu').slideToggle();
+      menuOpen = true
+    } else {
+      menuBtn.classList.remove('open')
+      $('.header__menu').slideToggle();
+      menuOpen = false
+    }
+  })
 
   $(".order-form__form-date").datepicker({
     todayButton: new Date(),
@@ -254,7 +283,7 @@ player.on('mousemove', function(){
   });
   volumeBarInit()
   function volumeBarInit() {
-    volumeBar.css('width', `calc(${volume.val()}% - 10px)`)
+    volumeBar.css('width', `calc(${volume.val()}% - 5px)`)
   }
   volumeState.on("click", function () {
     if (video[0].volume > 0) {
@@ -274,7 +303,7 @@ player.on('mousemove', function(){
     video[0].volume = vol;
     
 
-    volumeBar.css('width', `calc(${vol*100}% - ${vol*25}px)`)
+    volumeBar.css('width', `calc(${vol*100}% - ${vol*15}px)`)
 
     if (vol < 0.1) {
       volumeState.attr("class", "vol-mute");
@@ -296,4 +325,8 @@ player.on('mousemove', function(){
     var sDisplay = s > 0 ? (s < 10 ? "0" : "") + s : "00";
     return hDisplay + mDisplay + sDisplay;
   }
+
+
+
+  
 });
