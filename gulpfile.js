@@ -36,6 +36,11 @@ function images() {
     .pipe(dest('dist/images'))
 }
 
+function videos() {
+    return src('app/videos/**/*')
+    .pipe(dest('dist/videos'))
+}
+
 function scripts() {
     return src([
         'node_modules/jquery/dist/jquery.js',
@@ -95,8 +100,9 @@ exports.watching = watching;
 exports.browsersync = browsersync;
 exports.scripts = scripts;
 exports.images = images;
+exports.videos = videos;
 exports.cleanDist = cleanDist;
 
-exports.build = series(cleanDist, images, build);
+exports.build = series(cleanDist, images, videos, build);
 
 exports.default = parallel(styles, scripts, browsersync, watching);
